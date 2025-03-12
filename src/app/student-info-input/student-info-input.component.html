@@ -1,0 +1,16 @@
+<div>
+    <textarea style="width: 400px; height: 600px;"  [(ngModel)]="classData"  placeholder="Enter class data (e.g., 501,4,4,4)"></textarea>
+    <textarea style="width: 400px; height: 600px;" [(ngModel)]="studentList" placeholder="Enter student list (e.g., John Smith, 9)"></textarea>
+  
+    <button (click)="processInput()">Submit</button>
+  </div>
+  
+  <!-- Dynamic Buttons for each Class -->
+  <div *ngIf="parsedClassrooms">
+    <div *ngFor="let classroom of parsedClassrooms">
+      <button (click)="goToClass(classroom.name)">
+        {{ classroom.name }}
+      </button>
+    </div>
+  </div>
+  
